@@ -20,12 +20,13 @@ export default function Cadastro(props) {
             turma: turmaSelect
         }
         props.setUsuario(novoUsuario)
-        console.log("cadastrou")
+        const usuarioString = JSON.stringify(novoUsuario)
+        localStorage.setItem("usuario", usuarioString)
     }
 
     return (
         <>
-            <Header turma={props.turma} />
+            <Header turma={props.turma} usuarioProps={props.usuario} />
             <h1>Inputs controlados</h1>
             <input value={nome} onChange={(e)=>setNome(e.target.value)} onKeyDown={enviar} />
             <input value={idade} onChange={(e)=>setIdade(e.target.value)} type="number"/>

@@ -24,8 +24,8 @@ function App() {
       {/* o que aparece pro usuário */}
       {
         tela === "cadastro" ?
-          <Cadastro turma={turma} setUsuario={setUsuario} /> :
-          <Home turma={turma} trocaNome={trocaNome} />
+          <Cadastro turma={turma} setUsuario={setUsuario} usuario={usuario} /> :
+          <Home turma={turma} trocaNome={trocaNome} usuario={usuario}/>
       }
       <hr />
       <button onClick={trocaTela}>Muda tela</button>
